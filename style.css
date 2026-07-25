@@ -53,6 +53,11 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  width: 100%;
+    
+}
+* {
+    box-sizing: border-box;
 }
 
 img { max-width: 100%; display: block; }
@@ -229,6 +234,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* -- editor window signature element -- */
 .editor-window {
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   max-width: 820px;
   background: var(--bg-elevated);
   border: 1px solid var(--border-strong);
@@ -955,6 +962,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .editor-content { padding: 0 14px; }
 
   .footer-inner { flex-direction: column; text-align: center; }
+   .editor-tab:nth-child(2),
+.editor-tab:nth-child(3){
+    display:none;
+}
+
+.editor-statusbar{
+    display:none;
+}
+
+.editor-gutter{
+    display:none;
+}
+
+.hero-name{
+    font-size:2rem;
+}
+
+.hero-role{
+    font-size:1.2rem;
+}
+
+.hero-summary{
+    font-size:0.95rem;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
 }
 
 @media (max-width: 480px) {
