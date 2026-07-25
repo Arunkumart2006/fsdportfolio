@@ -248,10 +248,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .editor-titlebar {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   padding: 14px 18px;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
 }
 
 .editor-dots { display: flex; gap: 7px; }
@@ -264,7 +265,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .editor-dots span:nth-child(2) { background: #F2C36B; }
 .editor-dots span:nth-child(3) { background: #6BF29B; }
 
-.editor-tabs { display: flex; gap: 4px; overflow-x: auto; }
+.editor-tabs {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  flex: 1;
+  min-width: 0;
+  scrollbar-width: none;
+}
+
+.editor-tabs::-webkit-scrollbar {
+  display: none;
+}
 .editor-tab {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -950,7 +962,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .nav-toggle { display: flex; }
 
   .section { padding: 90px 0; }
-  .container { padding: 0 20px; }
+  .container { padding: 0 16px; }
 
   .about-stats { grid-template-columns: 1fr 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
@@ -987,6 +999,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size:0.95rem;
     overflow-wrap:anywhere;
     word-break:break-word;
+}
+   /* Hide extra tabs */
+.editor-tab:nth-child(2),
+.editor-tab:nth-child(3){
+    display:none;
+}
+
+/* Hide bottom status bar */
+.editor-statusbar{
+    display:none;
+}
+
+/* Remove line numbers */
+.editor-gutter{
+    display:none;
+}
+
+/* Smaller padding */
+.editor-content{
+    padding:18px;
+}
+
+/* Smaller heading */
+.hero-name{
+    font-size:1.8rem;
+    line-height:1.4;
+}
+
+/* Smaller role text */
+.hero-role{
+    font-size:0.95rem;
+}
+
+/* Wrap summary */
+.hero-summary{
+    font-size:0.95rem;
+    line-height:1.8;
+    padding:0 10px;
+    overflow-wrap:anywhere;
 }
 }
 
